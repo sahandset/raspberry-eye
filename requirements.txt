@@ -1,0 +1,6 @@
+# Python dependencies for Raspberry Eye
+# Note: picamera2 should be installed via apt on Raspberry Pi OS
+# This file is for reference only
+
+# Camera library (install via: sudo apt install -y python3-picamera2)
+# picamera2

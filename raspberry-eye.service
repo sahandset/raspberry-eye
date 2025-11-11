@@ -1,0 +1,26 @@
+[Unit]
+Description=Raspberry Eye Motion Detection System
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/raspberry-eye
+ExecStart=/home/pi/raspberry-eye/target/release/raspberry-eye
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment="RUST_LOG=info"
+Environment="CONFIG_PATH=/home/pi/raspberry-eye/config.yaml"
+
+# Security hardening (optional)
+# PrivateTmp=true
+# NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
